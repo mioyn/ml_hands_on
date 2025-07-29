@@ -13,5 +13,6 @@ It gives an idea of how uch eror the system typically makes in its prediction
 </summary>
 IF there are many outliers you might consider using MAE( also called average absolute deviation).
 </details>
- **Note:** RMSE is more sensitive to outliers than MAE. But when Outlirs are exponentially rare the RMSE performs very well and is preferred.
+**Free Software, Hell Yeah!** RMSE is more sensitive to outliers than MAE. But when Outlirs are exponentially rare the RMSE performs very well and is preferred.
 
+**Free Software, Hell Yeah!**
