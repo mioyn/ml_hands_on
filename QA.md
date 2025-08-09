@@ -15,3 +15,12 @@ IF there are many outliers you might consider using MAE( also called average abs
 </details>
 Note: RMSE is more sensitive to outliers than MAE. But when Outlirs are exponentially rare the RMSE performs very well and is preferred.
 
+<details>
+<summary>
+3. TensorFlow
+</summary>
+Opensouce deep learning library developed by google for ML and DL application.\
+Efficiently handles large scale numerical computation.\
+Supports CPU and GPU acceleration.\
+Used for training and deploying ML  models.\ 
+</details>
