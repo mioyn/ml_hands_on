@@ -82,3 +82,4 @@ Loss depend on the parameter of the model, weight and bias <br />
 
 If trainng accuracy is very high and validation accuracy is very low then it means  then its a over trained model
 <img width="1069" height="838" alt="image" src="https://github.com/user-attachments/assets/7a1da623-9c93-4ae6-8d79-db4b1e5778dc" />
+<img width="1415" height="626" alt="image" src="https://github.com/user-attachments/assets/150e1552-9df8-409d-935e-65790bf18e40" />
