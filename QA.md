@@ -1,85 +1,85 @@
 # QA
+
 <details>
-<summary>
-Roor Mean Square Error - RMSE
-</summary>
-A Typical performance measure for rgression problem is the root mean square error(RMSE). <br />
-It gives an idea of how uch eror the system typically makes in its prediction
+<summary>Root Mean Square Error — RMSE</summary>
+A typical performance measure for regression problems is the root mean square error (RMSE). It gives an idea of how much error the system typically makes in its predictions.
 </details>
 
 ---
 
 <details>
-<summary>
-Mean Absolute error - MAE
-</summary>
-IF there are many outliers you might consider using MAE( also called average absolute deviation).
+<summary>Mean Absolute Error — MAE</summary>
+If there are many outliers you might consider using MAE (also called average absolute deviation).
 </details>
-Note: RMSE is more sensitive to outliers than MAE. But when Outlirs are exponentially rare the RMSE performs very well and is preferred.
+
+Note: RMSE is more sensitive to outliers than MAE. When outliers are extremely rare, RMSE can perform well and is often preferred.
 
 ---
 
 <details>
-<summary>
-TensorFlow
-</summary>
-Opensouce deep learning library developed by google for ML and DL application. <br />
-Efficiently handles large scale numerical computation. <br />
-Supports CPU and GPU acceleration. <br />
-Used for training and deploying ML  models. <br />
+<summary>TensorFlow</summary>
+Open-source deep learning library developed by Google for machine learning and deep learning applications. It efficiently handles large-scale numerical computation and supports CPU and GPU acceleration. Commonly used for training and deploying ML models.
 </details>
 
 ---
 
 <details>
-<summary>
-Keras
-</summary>
-Its a opensource deep learning framework that provides an easy to use hogh-level API for building  and training nural network. <br />
-Efficiently handles large scale numerical computation. <br />
-Supports CPU and GPU acceleration. <br />
-Used for training and deploying ML  models. <br />
+<summary>Keras</summary>
+An open-source high-level neural networks API that runs on top of TensorFlow. Keras provides a simple, user-friendly interface for building and training neural networks.
 </details>
 
 ---
 
 <details>
-<summary>
-NumPy
-</summary>
-Library for Numnerical computation in Python. Provifding Multidimentional array and Mathematical operation <br />
-Efficient array operation using ndarray. <br />
-Vectorized computaion. <br />
-Comonly used for data preprocessing in ML. <br />
+<summary>NumPy</summary>
+A fundamental library for numerical computation in Python. Provides the ndarray type for fast, vectorized array operations and is commonly used for data preprocessing in ML.
 </details>
 
 ---
 
 <details>
-<summary>
-matplotlib
-</summary>
-Data Visualization lib for creating graphs, plots and charts <br />
-Supports line plots, bar charts, histogram, scatter plot, etc.. <br />
-Works well with nympy and pandas. <br />
-Usefull for visualizing data in ML. <br />
+<summary>matplotlib</summary>
+A data visualization library for creating plots and charts (line plots, bar charts, histograms, scatter plots, etc.). Works well with NumPy and pandas and is useful for visualizing data in ML workflows.
 </details>
 
 ---
 
 <details>
-<summary>
-Loss
-</summary>
-Loss depend on the parameter of the model, weight and bias <br />
- <br />
- <br />
- <br />
+<summary>Loss</summary>
+The loss (or cost) measures how well the model's predictions match the targets. It depends on model parameters (weights and biases) and is used to guide training via optimization.
 </details>
 
 ---
 
+<details>
+<summary>Regularization</summary>
+Techniques (L1/L2, weight decay, etc.) that penalize model complexity to improve generalization and reduce overfitting.
+</details>
 
-If trainng accuracy is very high and validation accuracy is very low then it means  then its a over trained model
+---
+
+<details>
+<summary>Dropout</summary>
+A stochastic regularization technique that randomly disables a fraction of neurons during training to reduce co-adaptation and improve generalization.
+</details>
+
+---
+
+<details>
+<summary>Early Stopping</summary>
+Stop training when validation performance stops improving to avoid overfitting. Often combined with checkpoints to restore the best model.
+</details>
+
+---
+
+<details>
+<summary>Batch Normalization</summary>
+Normalizes layer activations to have (approximately) zero mean and unit variance, which can speed up training and improve stability.
+</details>
+
+---
+
+If training accuracy is very high but validation accuracy is much lower, the model is likely overfitting.
+
 <img width="1069" height="838" alt="image" src="https://github.com/user-attachments/assets/7a1da623-9c93-4ae6-8d79-db4b1e5778dc" />
 <img width="1415" height="626" alt="image" src="https://github.com/user-attachments/assets/150e1552-9df8-409d-935e-65790bf18e40" />

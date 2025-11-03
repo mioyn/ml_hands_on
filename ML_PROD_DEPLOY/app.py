@@ -1,4 +1,5 @@
 import pickle
+
 import pandas as pd
 from flask import Flask, render_template, request
 
@@ -19,16 +20,18 @@ def predict():
     try:
         # Extract features from the form
         features = [float(x) for x in request.form.values()]
-        
+
         # Define feature names matching the training data
         feature_names = [
-            'sepal length (cm)', 'sepal width (cm)',
-            'petal length (cm)', 'petal width (cm)'
+            "sepal length (cm)",
+            "sepal width (cm)",
+            "petal length (cm)",
+            "petal width (cm)",
         ]
-        
+
         # Create DataFrame with feature names
         final_features = pd.DataFrame([features], columns=feature_names)
-        
+
         # Make prediction
         prediction = model.predict(final_features)[0]
 
@@ -42,4 +45,5 @@ def predict():
 
 if __name__ == "__main__":
     print(" App is running on http://127.0.0.1:5000")
+    app.run(host="0.0.0.0", port=5000, debug=True)
     app.run(host="0.0.0.0", port=5000, debug=True)
