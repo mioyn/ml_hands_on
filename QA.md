@@ -80,6 +80,7 @@ Normalizes layer activations to have (approximately) zero mean and unit variance
 ---
 
 If training accuracy is very high but validation accuracy is much lower, the model is likely overfitting.
+<img width="1102" height="629" alt="image" src="https://github.com/user-attachments/assets/3249a349-80f3-4f8e-b8ea-2886c94d6c23" />
 
 <img width="1069" height="838" alt="image" src="https://github.com/user-attachments/assets/7a1da623-9c93-4ae6-8d79-db4b1e5778dc" />
 <img width="1415" height="626" alt="image" src="https://github.com/user-attachments/assets/150e1552-9df8-409d-935e-65790bf18e40" />
