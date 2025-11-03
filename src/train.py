@@ -1,4 +1,5 @@
-from joblib import dump
+from pickle import dump
+
 from sklearn.model_selection import train_test_split
 
 
@@ -13,7 +14,12 @@ def train_model(model, X, y, config):
     model.fit(X_train, y_train)
 
     model_path = config["output"]["model_path"]
-    dump(model, model_path)
+
+    with open(model_path, "wb") as f:
+        dump(model, f)
+
+    print(model.feature_names_in_)
+
     print(f"Model saved to {model_path}")
 
     return model, X_test, y_test
