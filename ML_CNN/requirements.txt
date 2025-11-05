@@ -1,0 +1,11 @@
+scikit-learn
+pandas
+numpy
+pyyaml
+wandb
+matplotlib
+# TensorFlow wheels are platform- and Python-version-specific and sometimes
+# fail to install via a plain `pip install tensorflow` on Windows.
+# Use the CPU-only build on Windows (or install TensorFlow separately following
+# the project's instructions). Adjust the version to match your Python.
+tensorflow-cpu==2.12.0

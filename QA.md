@@ -46,7 +46,9 @@ A data visualization library for creating plots and charts (line plots, bar char
 
 <details>
 <summary>Loss</summary>
-The loss (or cost) measures how well the model's predictions match the targets. It depends on model parameters (weights and biases) and is used to guide training via optimization.
+The loss (or cost) measures how well the model's predictions match the targets. It depends on model parameters (weights and biases) and is used to guide training via optimization. </br>
+In regression an example of loss is meansquared error </br>  
+In classification an example of loss is cross entropy loss
 </details>
 
 ---
