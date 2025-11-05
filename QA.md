@@ -114,3 +114,5 @@ If training accuracy is very high but validation accuracy is much lower, the mod
 
 <img width="1069" height="838" alt="image" src="https://github.com/user-attachments/assets/7a1da623-9c93-4ae6-8d79-db4b1e5778dc" />
 <img width="1415" height="626" alt="image" src="https://github.com/user-attachments/assets/150e1552-9df8-409d-935e-65790bf18e40" />
+<img width="847" height="475" alt="image" src="https://github.com/user-attachments/assets/27745490-33d9-4346-b186-271b13900ab8" />
+
