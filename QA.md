@@ -81,6 +81,34 @@ Normalizes layer activations to have (approximately) zero mean and unit variance
 
 ---
 
+<details>
+<summary>BERT</summary>
+Uses a denoising self-supervised pre-training task </br>
+MLM (Masked Language Modeling) - in MLM random words in a sentence are replaced with a special token [MASK] and the model is trained to predict the missing words based on the surounding context </br>
+Example:</br> 
+
+```poweshell
+input:"The [MASK] is barking loudly"
+target: "dog"
+```
+</details>
+
+---
+
+<details>
+<summary>Causal language modeling (CLM)</summary>
+or autoregressive modeling </br>
+In this setup the model is trained to predict the next word given all previous words in a sentence </br>
+Example:</br>
+
+```poweshell
+input:"The dog is"
+target: "barking"
+```
+
+</details>
+
+---
 If training accuracy is very high but validation accuracy is much lower, the model is likely overfitting.
 <img width="1102" height="629" alt="image" src="https://github.com/user-attachments/assets/3249a349-80f3-4f8e-b8ea-2886c94d6c23" />
 
