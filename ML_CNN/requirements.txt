@@ -8,4 +8,4 @@ matplotlib
 # fail to install via a plain `pip install tensorflow` on Windows.
 # Use the CPU-only build on Windows (or install TensorFlow separately following
 # the project's instructions). Adjust the version to match your Python.
-tensorflow-cpu==2.12.0
+tensorflow-cpu==2.12.1
