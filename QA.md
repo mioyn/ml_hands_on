@@ -56,6 +56,8 @@ In classification an example of loss is cross entropy loss
 <details>
 <summary>Regularization</summary>
 Techniques (L1/L2, weight decay, etc.) that penalize model complexity to improve generalization and reduce overfitting.
+
+limit tree depth for tree based models
 </details>
 
 ---
@@ -63,6 +65,8 @@ Techniques (L1/L2, weight decay, etc.) that penalize model complexity to improve
 <details>
 <summary>Dropout</summary>
 A stochastic regularization technique that randomly disables a fraction of neurons during training to reduce co-adaptation and improve generalization.
+
+sets reandom y to 0
 </details>
 
 ---
@@ -77,6 +81,10 @@ Stop training when validation performance stops improving to avoid overfitting. 
 <details>
 <summary>Batch Normalization</summary>
 Normalizes layer activations to have (approximately) zero mean and unit variance, which can speed up training and improve stability.
+
+Normalize the output of each layer
+resacle the data using mean plus standard deviation
+
 </details>
 
 ---
@@ -109,6 +117,50 @@ target: "barking"
 </details>
 
 ---
+🧠 Input Embedding
+An input embedding is a way to convert raw input data (like words or image patches) into numerical vectors that a neural network can understand.
+
+In NLP: Each word is mapped to a high-dimensional vector (e.g., using Word2Vec, GloVe, or learned embeddings).
+
+In ViTs: Each image is split into patches (e.g., 16×16 pixels), flattened, and then passed through a linear projection to create a vector — this is the patch’s input embedding.
+
+🔹 Purpose: To represent the semantic or visual content of each input unit in a format suitable for processing by the model.
+
+📍 Position Embedding
+Transformers process inputs as sequences, but they don’t inherently understand order or spatial layout. That’s where position embeddings come in.
+
+They encode where each input is located in the sequence.
+
+In NLP, they capture word order.
+
+In ViTs, they encode the spatial position of each image patch.
+
+In ViTs: Since patches are treated like tokens, position embeddings help the model know which patch came from which part of the image — top-left, center, bottom-right, etc.
+
+🧩 Combined Input
+In practice, the model adds both embeddings together:
+
+Final Input = Input Embedding + Position Embedding
+
+This combined vector is what gets fed into the Transformer layers.
+
+nn dont know the adjencency of pixecls
+dense newral network - 
+
+convolutional newral network (CNN)
+convolutional kernal
+primary output of a convolutional network feature map
+Max pool
+
+Bias - variance tradeoff (algorithmic bias)
+
+
+VGG16 architecture
+
+Auto encoder
+
+
+
 If training accuracy is very high but validation accuracy is much lower, the model is likely overfitting.
 <img width="1102" height="629" alt="image" src="https://github.com/user-attachments/assets/3249a349-80f3-4f8e-b8ea-2886c94d6c23" />
 
