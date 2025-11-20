@@ -57,7 +57,6 @@ def _(np):
                    [[13], [16]]])
     print(d3a.shape)
     # (3, 2, 1) : 3 layers, each with 2 rows and 1 column
-
     return
 
 
@@ -168,7 +167,6 @@ def _(np):
     print(txdata)
     print(txdata.shape)
     print(txdata.size)
-
     return (txdata,)
 
 
@@ -177,15 +175,29 @@ def _(plt, txdata):
     # fig1, ax1 = plt.subplots(figsize=(10, 6))
     # ax1.imshow(txdata)
     # ax1.imshow(txdata, cmap='gray')
-
     # fig1
-    fig1, axes = plt.subplots(2, 2, figsize=(10, 10))
 
-    axes[0,0].imshow(txdata)
-    axes[0,0].set_title("Image 1")
+    figs, (ax1s, ax2s, ax3s) = plt.subplots(1, 3, figsize=(12, 6))
 
-    axes[0,1].imshow(txdata, cmap='gray')
-    axes[0,1].set_title("Image 2")
+    ax1s.imshow(txdata, cmap='gray')
+    ax1s.set_title("Gray Image")
+    ax1s.axis("off")
+
+    ax2s.imshow(txdata)  # default colormap
+    ax2s.set_title("Color Image")
+    ax2s.axis("off")
+
+    ax3s.imshow(txdata)  # default colormap
+    ax3s.set_title("Color Image")
+    ax3s.axis("off")
+    figs
+
+    # fig1, axes = plt.subplots(1, 2, figsize=(10, 10))
+    # axes[0,0].imshow(txdata)
+    # axes[0,0].set_title("Image 1")
+
+    # axes[0,1].imshow(txdata, cmap='gray')
+    # axes[0,1].set_title("Image 2")
 
     # axes[1,0].imshow(img3)
     # axes[1,0].set_title("Image 3")
@@ -193,10 +205,10 @@ def _(plt, txdata):
     # axes[1,1].imshow(img4)
     # axes[1,1].set_title("Image 4")
 
-    for ax1 in axes.ravel():
-        ax1.axis("off")
-    fig1
-    return (axes,)
+    # for ax1 in axes.ravel():
+    #     ax1.axis("off")
+    # fig1
+    return
 
 
 @app.cell
@@ -208,14 +220,134 @@ def _(np):
 
 
 @app.cell
-def _(axes, npydata):
-    # fig3, ax3 = plt.subplots(figsize=(10, 6))
-    # ax3.imshow(npydata)
+def _(npydata, plt):
+    fig3, ax3 = plt.subplots(figsize=(10, 6))
+    ax3.imshow(npydata)
+    ax3.axis("off")
+    fig3
+    return (ax3,)
 
-    # fig3
 
-    axes[1,0].imshow(npydata)
-    axes[1,0].set_title("Image 3")
+@app.cell
+def _(ax3, npydata):
+    npydata[0:150, 500:675] =[0, 255, 0]
+    ax3.imshow(npydata)
+    return
+
+
+@app.cell
+def _(ax3, npydata):
+    npydata[880:899, :] =[255, 165, 0]
+    ax3.imshow(npydata)
+    return
+
+
+@app.cell
+def _(ax3, npydata):
+    newarr = npydata[0:150, 500:675]
+    print(newarr.shape)
+    ax3.axis("on")
+    ax3.imshow(newarr)
+    return (newarr,)
+
+
+@app.cell
+def _(ax3, newarr):
+    newarr[23:120, 23:145] = [0, 0, 255]
+    ax3.imshow(newarr)
+    return
+
+
+@app.cell
+def _(ax3, npydata):
+    ax3.imshow(npydata)
+    return
+
+
+@app.cell
+def _(np, npydata):
+    np.save('tempdata/modified_img.npy', npydata)
+    return
+
+
+@app.cell
+def _(ax3, np):
+    modifiednpydata = np.load('tempdata/modified_img.npy')
+    print(modifiednpydata.size)
+    ax3.imshow(modifiednpydata)
+    return
+
+
+@app.cell
+def _(np):
+    scores = np.array([91, 85, 78, 92, 88, 54,45, 67, 73, 81])
+    scores[scores < 60] = 0
+    print(scores)
+
+    return
+
+
+@app.cell
+def _(np):
+    ages = np.array([[22, 66, 18, 20, 30, 16, 28, 19],
+                     [35, 15, 29, 85, 9, 27, 31, 26],
+                     [45, 50, 41, 15, 48, 36, 99, 42]])
+    teenages = ages[ages < 18]
+    print(teenages)
+    adults = ages[(ages >= 18) & (ages < 65) ]
+    print(adults)
+
+    adultsRetainShape = np.where((ages >= 18) & (ages < 65), ages, 0)
+    print(adultsRetainShape)
+    return
+
+
+@app.cell
+def _(np):
+    t1 = np.where([[True, False], [True, True]],
+             [[1, 2], [3, 4]], [[9, 8], [7, 6]])
+    print(t1)
+
+    x, y = np.ogrid[:3, :4]
+    print(x)
+    print(y)    
+    print(x.shape)
+    print(y.shape)
+    t2 = np.where(x < y, x, 10 + y)  # both x and 10+y are broadcast
+    print(t2)
+
+    return
+
+
+@app.cell
+def _(np):
+    np.random.seed(seed=1)
+
+    rnd1 = np.random.randint(low=0, high=10, size=(3, 4)  )
+    print(rnd1)
+
+    rand2 = np.random.uniform(low=0.0, high=1.0, size=(2,3))
+    print(rand2)
+
+    np.random.shuffle(rnd1)
+    print(rnd1)
+    arra2 = np.array([1, 2, 4, 3, 5 ])
+    np.random.shuffle(arra2)
+    print(arra2)
+    print(np.random.choice(arra2, size=(3,2)))
+    return
+
+
+@app.cell
+def _(np):
+    axe= np.arange(12).reshape(3,4)
+    print(axe)
+
+    for element in np.nditer(axe, order='F'):
+        print(element, end=' ')
+
+    for element in np.nditer(axe, order='C'):
+        print(element, end=' ')
     return
 
 
