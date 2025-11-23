@@ -346,6 +346,8 @@ def _(np):
     for element in np.nditer(axe, order='F'):
         print(element, end=' ')
 
+    print()
+
     for element in np.nditer(axe, order='C'):
         print(element, end=' ')
     return

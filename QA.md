@@ -18,7 +18,9 @@ Note: RMSE is more sensitive to outliers than MAE. When outliers are extremely r
 
 <details>
 <summary>TensorFlow</summary>
-Open-source deep learning library developed by Google for machine learning and deep learning applications. It efficiently handles large-scale numerical computation and supports CPU and GPU acceleration. Commonly used for training and deploying ML models.
+Open-source deep learning library developed by Google for machine learning and deep learning applications. It efficiently handles large-scale numerical computation and supports CPU and GPU acceleration. Commonly used for training and deploying ML models. 
+
+TPU (Tensor Processing Unit) was designed from scratch by google specifically for tensor based operations that appear in deep learning workloads such as matrix multiplicaitons and convolutions. TPUs are specialized hardware accelerators dedicated only to machine learning tasks.
 </details>
 
 ---
@@ -113,6 +115,14 @@ Example:</br>
 input:"The dog is"
 target: "barking"
 ```
+
+</details>
+
+---
+
+<details>
+<summary>BERT</summary>
+
 
 </details>
 
