@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.17.8"
+__generated_with = "0.18.0"
 app = marimo.App()
 
 
@@ -283,7 +283,6 @@ def _(np):
     scores = np.array([91, 85, 78, 92, 88, 54,45, 67, 73, 81])
     scores[scores < 60] = 0
     print(scores)
-
     return
 
 
@@ -315,7 +314,6 @@ def _(np):
     print(y.shape)
     t2 = np.where(x < y, x, 10 + y)  # both x and 10+y are broadcast
     print(t2)
-
     return
 
 
