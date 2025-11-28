@@ -3,7 +3,7 @@ import os
 from io import BytesIO
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw
 from rembg import remove
 
 
@@ -83,21 +83,44 @@ def image_to_npy(input_image_path, output_npy_path):
     print("Saved .npy file to:", output_npy_path)
 
 
+def make_circle_image(input_path, output_path, size=256):
+    # Open the image
+    img = Image.open(input_path).convert("RGBA")
+
+    # Resize to square (keeping aspect ratio, then center-crop)
+    img.thumbnail((size, size), Image.LANCZOS)
+    w, h = img.size
+    square = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    square.paste(img, ((size - w) // 2, (size - h) // 2))
+
+    # Create circular mask
+    mask = Image.new("L", (size, size), 0)
+    draw = ImageDraw.Draw(mask)
+    draw.ellipse((0, 0, size, size), fill=255)
+
+    # Apply mask
+    square.putalpha(mask)
+
+    # Save result
+    square.save(output_path, format="PNG")
+
+
 if __name__ == "__main__":
     # --- Example Usage ---
     # Make sure 'download.jpg' exists in the same directory as your script
-    input_file = "tempdata/download.jpg"
+    input_file = "tempdata/postge.png"
     output_file = "tempdata/output_transparent.png"
     # Check if the input file exists for the example
     if os.path.exists(input_file):
+
         remove_bg(input_file, output_file)
     else:
         print(
             f"Error: {input_file} not found. Please create or provide the correct path to a JPG file."
         )
 
-    create_svg_from_png("tempdata/soccer-player.png", "tempdata/output_image.svg")
+    # create_svg_from_png("tempdata/soccer-player.png", "tempdata/output_image.svg")
 
-    image_to_text("tempdata/download.jpg", "tempdata/img_output.txt")
+    # image_to_text("tempdata/download.jpg", "tempdata/img_output.txt")
 
-    image_to_npy("tempdata/download.jpg", "tempdata/img_output.npy")
+    # image_to_npy("tempdata/download.jpg", "tempdata/img_output.npy")
