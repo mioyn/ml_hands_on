@@ -1444,7 +1444,7 @@ $$ \text{cosine similarity}(A, B) = \frac{A \cdot B}{||A|| , ||B||} $$
 
 ## 7.2 Define what embeddings are
 
-**Embeddings** are **dense numerical vector representations** of data (such as words, sentences, or images) that capture **semantic meaning**.
+**Embeddings** are numerical, vector representations of data such as text, images, or audio that capture their underlying semantic meaning and context.
 
 ### Key Characteristics
 
@@ -1467,13 +1467,6 @@ Embeddings are useful because they:
 2. Convert unstructured data (text, images) into numbers
 3. Enable efficient similarity search
 4. Reduce dimensionality compared to one-hot encoding
-
-### Comparison Example
-
-| Representation   | Similarity Awareness |
-| ---------------- | -------------------- |
-| One-hot encoding | No                   |
-| Embeddings       | Yes                  |
 
 ---
 
