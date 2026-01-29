@@ -138,22 +138,22 @@ It models the relationship between input features and a continuous output by fit
 
 For a single feature:
 
-$
+$$
 y = \beta_0 + \beta_1 x 
-$
+$$
 
 For multiple features:
 
-$
+$$
 y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n 
-$
+$$
 
 Where:
 
-* $ y $ = predicted output
-* $ x_i $ = input features
-* $ \beta_0 $ = intercept
-* $ \beta_i $ = coefficients (weights)
+* $$y$$ = predicted output
+* $$x_i$$ = input features
+* $$\beta_0$$ = intercept
+* $$\beta_i$$ = coefficients (weights)
 
 ### How it Works
 
@@ -164,9 +164,9 @@ Where:
 
 
 Predicting house price based on size:
-$
+$$
 price = 50,000 + 1,200 \times size 
-$
+$$
 
 ---
 
@@ -183,16 +183,11 @@ Despite its name, it is a **classification algorithm**, not regression.
 
 ### Model Equation
 
-Linear part:
-$
-z = \beta_0 + \beta_1 x_1 + ... + \beta_n x_n 
-$
+Linear part: $$z = \beta_0 + \beta_1 x_1 + ... + \beta_n x_n $$
 
-Sigmoid function:
-$ \sigma(z) = \frac{1}{1 + e^{-z}} $
+Sigmoid function: $$\sigma(z) = \frac{1}{1 + e^{-z}}$$
 
-Final output:
-$ P(y=1|x) = \sigma(z) $
+Final output: $$P(y=1|x) = \sigma(z)$$
 
 ### Decision Rule
 
@@ -362,18 +357,18 @@ Output layer:
 
 ### Step 1: Hidden layer calculation
 
-$ z_1 = (2 \times 3) + (1 \times 2) + 1 = 6 + 2 + 1 = 9 $
+$$z_1 = (2 \times 3) + (1 \times 2) + 1 = 6 + 2 + 1 = 9$$
 
 Apply ReLU:
-$ h = \max(0, 9) = 9 $
+$$h = \max(0, 9) = 9$$
 
 ### Step 2: Output layer calculation
 
-$ y = (9 \times 4) + 0 = 36 $
+$$y = (9 \times 4) + 0 = 36$$
 
 ### Final Output
 
-$ \boxed{y = 36} $
+$$\boxed{y = 36}$$
 
 ---
 
@@ -384,7 +379,7 @@ $ \boxed{y = 36} $
 Linear models assume a **linear relationship** between inputs and outputs.
 
 Example equation:
-$ y = w_1x_1 + w_2x_2 + b $
+$$y = w_1x_1 + w_2x_2 + b$$
 
 **Characteristics:**
 
@@ -418,7 +413,7 @@ Non-linear models can learn **complex relationships** due to non-linear activati
 * Output is binary
 * Used in early perceptrons
 
-$ f(x) = \begin{cases} 1 & x \ge 0 \ 0 & x < 0 \end{cases} $
+$$ f(x) = \begin{cases} 1 & x \ge 0 \ 0 & x < 0 \end{cases} $$
 
 ---
 
@@ -427,7 +422,7 @@ $ f(x) = \begin{cases} 1 & x \ge 0 \ 0 & x < 0 \end{cases} $
 * Outputs values between 0 and 1
 * Interpretable as probability
 
-$ \sigma(x) = \frac{1}{1 + e^{-x}} $
+$$ \sigma(x) = \frac{1}{1 + e^{-x}} $$
 
 ---
 
@@ -436,7 +431,7 @@ $ \sigma(x) = \frac{1}{1 + e^{-x}} $
 * Outputs values between -1 and 1
 * Zero-centered
 
-$ tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} $
+$$ tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} $$
 
 ---
 
@@ -444,7 +439,7 @@ $ tanh(x) = \frac{e^x - e^{-x}}{e^x + e^{-x}} $
 
 * Most commonly used in deep networks
 
-$ f(x) = \max(0, x) $
+$$ f(x) = \max(0, x) $$
 
 ---
 
@@ -462,7 +457,7 @@ SoftMax is used in the **output layer of multi-class classification models**.
 
 ### Formula
 
-$ SoftMax(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}} $
+$$ SoftMax(z_i) = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}} $$
 
 ### Example
 
@@ -482,7 +477,7 @@ SoftMax output:
 
 For a fully connected layer:
 
-$ Parameters = (Inputs \times Neurons) + Biases $
+$$ Parameters = (Inputs \times Neurons) + Biases $$
 
 ### Example
 
@@ -725,12 +720,12 @@ Mean Squared Error is a **regression loss function**.
 
 ### Equation
 
-$ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 $
+$$ MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 $$
 
 Where:
 
-* ( y_i ) = true value
-* ( \hat{y}_i ) = predicted value
+* $$y_i$$ = true value
+* $$\hat{y}_i$$ = predicted value
 
 ### Properties
 
@@ -752,7 +747,7 @@ Binary Cross-Entropy is a **loss function for binary classification**.
 
 ### Equation
 
-$ L = -\frac{1}{n} \sum_{i=1}^{n} [y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)] $
+$$ L = -\frac{1}{n} \sum_{i=1}^{n} [y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)] $$
 
 ### Usage
 
@@ -904,11 +899,11 @@ If the mean and standard deviation of the *entire dataset* are used for scaling,
 
 ### Accuracy Formula
 
-$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} $
+$$ Accuracy = \frac{TP + TN}{TP + TN + FP + FN} $$
 
 ### Calculation
 
-$ Accuracy = \frac{40 + 45}{40 + 45 + 5 + 10} = \frac{85}{100} = 0.85 $
+$$ Accuracy = \frac{40 + 45}{40 + 45 + 5 + 10} = \frac{85}{100} = 0.85 $$
 
 **Accuracy = 85%**
 
@@ -969,7 +964,7 @@ Mean Absolute Error measures the **average absolute difference** between predict
 
 ### Equation
 
-$ MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| $
+$$ MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| $$
 
 ### Properties
 
@@ -1067,14 +1062,14 @@ Gradient Descent is an optimization algorithm used to **minimize a loss (cost) f
 
 ### Core Equation
 
-$ \theta_{new} = \theta_{old} - \eta \cdot \nabla J(\theta) $
+$$ \theta_{new} = \theta_{old} - \eta \cdot \nabla J(\theta) $$
 
 Where:
 
-* ( \theta ) = model parameters (weights, biases)
-* ( \eta ) = learning rate
-* ( J(\theta) ) = loss (cost) function
-* ( \nabla J(\theta) ) = gradient (first derivative) of the loss
+* $$\theta$$ = model parameters (weights, biases)
+* $$\eta$$ = learning rate
+* $$J(\theta)$$ = loss (cost) function
+* $$\nabla J(\theta)$$ = gradient (first derivative) of the loss
 
 ### Intuition
 
@@ -1294,15 +1289,15 @@ Input Image (224×224×3)
 
 ### Convolution Calculation
 
-$
+$$
 (1×1) + (2×0) + (3×-1) +
 (4×1) + (5×0) + (6×-1) +
 (7×1) + (8×0) + (9×-1)
-$
+$$
 
-$
+$$
 = (1 - 3) + (4 - 6) + (7 - 9) = -6
-$
+$$
 
 **Output value = -6**
 
@@ -1430,8 +1425,8 @@ Cosine similarity is widely used to:
 
 * Two vectors of equal length (e.g., embeddings)
 
-  * $ \vec{A} = [a_1, a_2, ..., a_n] $
-  * $ \vec{B} = [b_1, b_2, ..., b_n] $
+  * $$\vec{A} = [a_1, a_2, ..., a_n]$$
+  * $$\vec{B} = [b_1, b_2, ..., b_n]$$
 
 ### Output
 
@@ -1443,7 +1438,7 @@ Cosine similarity is widely used to:
 
 ### Equation
 
-$ \text{cosine_similarity}(A, B) = \frac{A \cdot B}{||A|| , ||B||} $
+$$ \text{cosine similarity}(A, B) = \frac{A \cdot B}{||A|| , ||B||} $$
 
 ---
 
